@@ -6,6 +6,24 @@
 <title>Staff</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<a href="https://wa.me/260978805917" class="whatsapp" target="_blank">
+    💬
+</a>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+<script>
+fetch('data/staff/')
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById('staffList').innerHTML = html;
+  });
+</script>
+
 <body>
 
 <header class="header">
@@ -15,14 +33,41 @@
 </header>
 
 <nav class="navbar">
-<a href="index.html">Home</a>
+    <div class="nav-container">
+        <span class="brand">Adastra Day High School</span>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <ul class="menu" id="menu">
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">Our School</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Academics ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="academics.html">Subjects</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                </ul>
+            </li>
+
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
 <main class="content">
-<section class="card">
-<h3>Deputy Head Teacher</h3>
-<p>Michelo Musyutila</p>
-</section>
+    <section class="card">
+        <h2>Our Staff</h2>
+        <div id="staffList" class="staff-grid"></div>
+    </section>
 </main>
 
 <footer class="footer">© 2026 Adastra Day High School</footer>

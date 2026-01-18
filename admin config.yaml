@@ -1,0 +1,37 @@
+admin/config.yml
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "School Settings"
+    files:
+      - name: "general"
+        label: "General Information"
+        file: "data/settings.json"
+        fields:
+          - { label: "School Name", name: "school_name", widget: "string" }
+          - { label: "Motto", name: "motto", widget: "string" }
+          - { label: "School Logo", name: "logo", widget: "image" }
+
+  - name: "staff"
+    label: "Staff Members"
+    folder: "data/staff"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+
+  - name: "subjects"
+    label: "Subjects Offered"
+    folder: "data/subjects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Subject Name", name: "title", widget: "string" }

@@ -1,0 +1,3 @@
+data/staff/
+data/subjects/
+images/uploads/

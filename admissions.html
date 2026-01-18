@@ -6,6 +6,16 @@
 <title>Admissions</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<a href="https://wa.me/260978805917" class="whatsapp" target="_blank">
+    💬
+</a>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 <body>
 
 <header class="header">
@@ -15,19 +25,46 @@
 </header>
 
 <nav class="navbar">
-<a href="index.html">Home</a>
-<a href="academics.html">Academics</a>
-<a href="contact.html">Contact</a>
+    <div class="nav-container">
+        <span class="brand">Adastra Day High School</span>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <ul class="menu" id="menu">
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">About ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">Our School</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Academics ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="academics.html">Subjects</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                </ul>
+            </li>
+
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
 <main class="content">
 <section class="card">
 <h3>Apply Online</h3>
 
-<form action="mailto:adastradayhigh@gmail.com" method="post" enctype="text/plain">
-<input type="text" placeholder="Student Name" required><br><br>
-<input type="text" placeholder="Grade" required><br><br>
-<button type="submit">Submit</button>
+<form action="https://formsubmit.co/adastradayhigh@gmail.com" method="POST">
+    <input type="text" name="student_name" placeholder="Student Name" required><br><br>
+    <input type="text" name="grade" placeholder="Grade Applying For" required><br><br>
+    <input type="tel" name="parent_phone" placeholder="Parent Phone Number" required><br><br>
+
+    <button type="submit">Apply Now</button>
 </form>
 
 </section>

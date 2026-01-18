@@ -1,1 +1,13 @@
-adastra-day-high-school
+adastra-day-high-school/
+│
+├── admin/
+│   ├── index.html
+│   └── config.yml
+│
+├── data/
+│   ├── settings.json
+│   ├── staff/
+│   └── subjects/
+│
+├── images/
+│   └── uploads/
