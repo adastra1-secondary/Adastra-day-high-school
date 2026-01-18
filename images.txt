@@ -1,1 +1,7 @@
-images
+adastra-day-high-school/
+│
+├── images/
+│   ├── logo.png
+│   ├── photo1.jpg
+│   ├── photo2.jpg
+│   ├── photo3.jpg
