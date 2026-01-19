@@ -1,95 +1,60 @@
 <!DOCTYPE html>
-<html lang="
+<html lang="en">
 <head>
-<meta name="description" content="Adastra Day High School – Reach for Heights. A modern secondary school offering quality education in Zambia.">
-<meta name="keywords" content="Adastra Day High School, Secondary School Zambia, Best Day School">
-<meta name="author" content="Adastra Day High School">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adastra Day High School</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<a href="https://wa.me/260978805917" class="whatsapp" target="_blank">
-    💬
-</a>
-
-<script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-}
-</script>
-
-<script>
-fetch('data/settings.json')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('schoolName').textContent = data.school_name;
-    document.getElementById('schoolMotto').textContent = data.motto;
-
-    if (data.logo) {
-      document.getElementById('schoolLogo').src = data.logo;
-    }
-  });
-</script>
-
 <body>
 
-<header class="header">
-    <img id="schoolLogo" class="logo" alt="School Logo">
-    <h1 id="schoolName">Adastra Day High School</h1>
-    <p class="motto" id="schoolMotto">Reach for Heights</p>
-</header>
+  <!-- HEADER / LOGO -->
+  <header>
+    <img id="schoolLogo" src="" alt="School Logo" class="logo">
+    <h1 id="schoolName"></h1>
+    <p id="schoolMotto"></p>
+  </header>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <span class="brand">Adastra Day High School</span>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-        <ul class="menu" id="menu">
-            <li><a href="index.html">Home</a></li>
-
-            <li class="dropdown">
-                <a href="#">About ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="about.html">Our School</a></li>
-                    <li><a href="staff.html">Staff</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#">Academics ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="academics.html">Subjects</a></li>
-                    <li><a href="admissions.html">Admissions</a></li>
-                </ul>
-            </li>
-
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="results.html">Results</a></li>
-            <li><a href="contact.html">Contact</a></li>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="academics.html">Academics</a></li>
         </ul>
-    </div>
-</nav>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<section class="hero">
-    <h2>Welcome to Adastra Day High School</h2>
-    <p>A modern learning institution committed to academic excellence and discipline.</p>
-</section>
-
-<main class="content">
-    <section class="card">
-        <h3>Our Vision</h3>
-        <p>To empower learners to reach new heights and positively impact society.</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="welcome">
+      <h2>Welcome to Adastra Day High School</h2>
+      <p>Providing quality education and reaching for heights!</p>
     </section>
+  </main>
 
-    <section class="card">
-        <h3>Announcements</h3>
-        <ul>
-            <li>📌 New admissions ongoing</li>
-            <li>📌 Term 2 opens soon</li>
-        </ul>
-    </section>
-</main>
+  <!-- FOOTER -->
+  <footer>
+    <p>Contact: <span id="phone1"></span>, <span id="phone2"></span> | Email: <span id="schoolEmail"></span></p>
+  </footer>
 
-<footer class="footer">
-    © 2026 Adastra Day High School | Email: adastradayhigh@gmail.com
-</footer>
+  <!-- DYNAMIC SCRIPT -->
+  <script src="script.js"></script>
+  <script>
+    // Fill footer contact from settings.json
+    fetch('data/settings.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('phone1').textContent = data.phone1;
+        document.getElementById('phone2').textContent = data.phone2;
+        document.getElementById('schoolEmail').textContent = data.email;
+      });
+  </script>
 
 </body>
 </html>
